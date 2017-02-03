@@ -1,0 +1,29 @@
+.footer{
+
+	height: $size__footer;
+	padding: * 2rem;
+
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	// mods
+
+	// elements
+	&__{
+		&faq{
+			@extend %link;
+
+			font-size: 3.25rem;
+			font-weight: 700;
+
+			color: $color;
+
+			// pseudoelements
+			&::after{
+				content: '?';
+
+			}
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.g-page{
+
+	height: 100%;
+	margin: initial;
+
+	font-family: $font-family--primary;
+
+	color: $color__text;
+	background: $color__bg;
+
+	overflow: hidden;
+
+	// elements
+	&__{
+		&content{
+			height: inherit;
+		}
+	}
+}

@@ -1,0 +1,19 @@
+.phone{
+	@extend %link;
+
+	font-size: 2rem;
+
+	// elements
+	&__{
+		&add{
+
+			// pseudoelements
+			&::after{
+				content: ' ';
+			}
+		}
+		&number{
+			font-weight: 700;
+		}
+	}
+}

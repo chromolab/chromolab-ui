@@ -1,0 +1,59 @@
+.intro{
+
+	box-sizing: border-box;
+	height: 100%;
+	padding: 2.375rem 1.5rem 3.125rem;
+
+	font-size: 1.5rem;
+
+	background-size: cover;
+	background-repeat: no-repeat;
+
+	color: white;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	// elements
+	&__{
+		&title{
+			font-size: inherit;
+			font-weight: normal;
+		}
+		&warn{
+			font-size: 3.5rem;
+			font-weight: 900;
+		}
+		&link{
+			@extend %link;
+
+			text-decoration: underline;
+
+			// mods
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		&button{
+			padding: 1rem;
+			border: initial;
+			margin: initial;
+
+			font-size: inherit;
+
+			border-radius: 2rem;
+			background: $color--tertiary;
+			color: white;
+
+			transition: ;
+
+			// mods
+			&:hover{
+				background: $color;
+
+				cursor: pointer;
+			}
+		}
+	}
+}

@@ -1,0 +1,12 @@
+
+// types
+$font-family--sans-serif: GothamPro, PT Sans Open Sans, Arial, sans-serif;
+
+// abastract
+$font-family--primary: $font-family--sans-serif;
+
+// props
+$font-family: $font-family--primary;
+$font-size: 1.25rem;
+
+$font-size--secondary: .875rem;

@@ -1,0 +1,17 @@
+.page{
+
+	height: inherit;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+
+	// elements
+	&__{
+		&content{
+			flex: 1;
+
+			overflow: auto;
+		}
+	}
+}

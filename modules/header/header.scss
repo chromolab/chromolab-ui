@@ -1,0 +1,71 @@
+.header{
+
+	padding: * 1.5rem;
+
+	// elements
+	&__{
+		&nav{
+			padding: 1rem *;
+
+			display: flex;
+			justify-content: space-between;
+		}
+		&menu{
+
+			// subelements
+			&-{
+				&icon{
+					size: 2.25rem 1.75rem;
+
+					position: relative;
+					display: flex;
+					align-items: center;
+					justify-content: space-between;
+
+					// mods
+					&:hover{
+						cursor: pointer;
+					}
+				}
+				&icon--menu &line{
+					&:nth-child(2){
+						opacity: 0;
+					}
+					&:first-child,
+					&:last-child{
+						transform: rotate(45deg);
+					}
+					&:last-child{
+						transform: rotate(-45deg);
+					}
+				}
+				&line{
+					width: 100%;
+					height: .25rem;
+					background: $color;
+
+					transition: ;
+
+					// mods
+					&:first-child,
+					&:last-child{
+						position: absolute * 0;
+					}
+					&:first-child{
+						top: 0;
+						transform-origin: top left;
+					}
+					&:last-child{
+						bottom: 0;
+						transform-origin: bottom left;
+					}
+				}
+			}
+		}
+		&logo{
+			padding: * * 2rem;
+
+			text-align: center;
+		}
+	}
+}

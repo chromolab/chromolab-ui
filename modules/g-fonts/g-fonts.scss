@@ -1,0 +1,11 @@
+@each $font, $weight in (Regular, Light, Bold, Black), (400, 300, 700, 900) {
+
+	@font-face{
+		font-family: GothamPro;
+		font-style: normal;
+		font-weight: $weight;
+		src:
+			url('assets/fonts/GothaPro$(font).woff2'),
+			url('assets/fonts/GothaPro$(font).woff');
+	}
+}

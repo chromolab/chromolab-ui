@@ -1,0 +1,18 @@
+
+// direct
+$color__white: gray(95%);
+$color__gray: gray(66%);
+$color__black: gray(18%);
+$color__red: hsl(346, 40%, 45%);
+$color__purple: hsl(309, 36%, 31%);
+$color__purple--dark: hsl(257, 45%, 30%);
+
+// preabstract
+
+// abstract
+$color--primary: $color__red;
+$color--secondary: $color__purple;
+$color--tertiary: $color__purple--dark;
+$color: $color--primary;
+$color__text: $color--secondary;
+$color__bg: $color__white;
