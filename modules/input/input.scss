@@ -1,10 +1,44 @@
-/* stylelint-disable */
 .input{
+
+	display: flex;
+	justify-content: space-between;
+	&:not(:first-child){
+		margin-top: 1rem;
+	}
 
 	// mods
 
 	// elements
 	&__{
+		&field{
+			box-sizing: border-box;
+			width: 100%;
+			height: 4rem;
+			line-height: 4rem;
+			padding: 0 1.625rem;
+			border: 0;
+			box-shadow: inset 2px 1px 3px rgba(0, 0, 0, 0.15);
+			border: 3px solid #f1f1f1;
+			background-color: #fff;
+			border-radius: 2rem;
 
+			font-family: "Gotham Pro";
+			font-weight: 300;
+			font-size: 23px;
+			color: #747474;
+			&::placeholder{
+				opacity: 1;
+			}
+			&--{
+				&text{
+					min-height: 8rem;
+				}
+			}
+		}
+	}
+	span{
+		display: block;
+		margin-right: 1rem;
+		line-height: 4rem;
 	}
 }
