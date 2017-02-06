@@ -15,7 +15,7 @@ class Input extends Component {
 		delete props.className
 
 		return (
-			<div className={`input ${className}`}>
+			<div className={`input ${className ? '' : className}`}>
 				<Icon className="input__icon" type={type}><Img size="25" /></Icon>
 				{
 					type === 'text'
