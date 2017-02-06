@@ -7,6 +7,7 @@ import Login from '../modules/login/login'
 import Intro from '../modules/intro/intro'
 import About from '../modules/about/about'
 import Forget from '../modules/forget/forget'
+import Catalog from '../modules/catalog/catalog'
 import Success from '../modules/success/success'
 import Callback from '../modules/callback/callback'
 import Question from '../modules/question/question'
@@ -23,6 +24,10 @@ render(
 				<Route
 					path="about"
 					component={About}
+				/>
+				<Route
+					path="catalog"
+					component={Catalog}
 				/>
 				<Route
 					path="callback"
