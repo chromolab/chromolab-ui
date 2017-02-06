@@ -1,4 +1,4 @@
-@each $font, $weight in (Regular, Light, Bold, Black), (400, 300, 700, 900) {
+@each $font, $weight in (Regular, Light, Medium, Bold, Black), (400, 300, 500, 700, 900) {
 
 	@font-face{
 		font-family: GothamPro;

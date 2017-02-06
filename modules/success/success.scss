@@ -5,6 +5,24 @@
 
 	// elements
 	&__{
-
+		&title{
+			text-align: center;
+			font-size: 1.875rem;
+			font-weight: 700;
+			color: $color__gray;
+		}
+		&note{
+			margin-top: 2rem;
+			text-align: center;
+			font-size: 1.25rem;
+			color: $color__gray;
+		}
+		&link{
+			display: block;
+			margin-top: 4rem;
+			text-align: center;
+			font-size: 1.25rem;
+			color: $color--primary;
+		}
 	}
 }
