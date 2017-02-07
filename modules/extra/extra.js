@@ -22,7 +22,7 @@ class Extra extends Component {
 					<div className="extra__title">Забор крови</div>
 					<div className="extra__price">180</div>
 					<div className="extra__button" onClick={::this.toggle}>
-						<IconArrow />
+						<IconArrow  className="extra__arrow" />
 					</div>
 				</div>
 				<div className="extra__content">

@@ -1,10 +1,95 @@
-/* stylelint-disable */
 .extra{
 
 	// mods
-
+	&--{
+		&open{
+			.extra__arrow{
+				transform: rotate(180deg);
+			}
+			.extra__content{
+				opacity: 1;
+				visibility: visible;
+				height: auto;
+			}
+		}
+	}
 	// elements
 	&__{
+		&header{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: * -2rem;
 
+			box-shadow: 0 2px 0 0 color($color__gray a(.2));
+		}
+		&content{
+			opacity: 0;
+			visibility: hidden;
+			height: 0;
+			margin-left: -2rem;
+			margin-right: -2rem;
+			background-color: $color--primary;
+			.extra__title{
+				color: inherit;
+			}
+			.extra__price{
+				color: inherit;
+			}
+		}
+		&item{
+			height: 4.5rem;
+			padding-right: 4rem;
+
+			background-color: $color--primary;
+			color: #fff;
+
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+
+			// mods
+			&::nth-child(2n-1){
+				background-color: #bc265f;
+			}
+		}
+		&title{
+			flex: 1;
+
+			margin-left: 3rem;
+
+			font-size: 1.25rem;
+
+			text-decoration: underline;
+			color: $color--primary;
+		}
+		&price{
+			margin-right: 1rem;
+
+			font-size: 1.5rem;
+
+			color: $color--secondary;
+
+			// pseudoelements
+			&::after{
+				content: "₽";
+				font-size: 1rem;
+				margin-left: 0.5rem;
+			}
+		}
+		&button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			size: 64px;
+			background-color: $color--primary;
+			color: #fff;
+			cursor: pointer;
+		}
+		&arrow{
+			max-width: 2rem;
+			max-height: 1.125rem;
+			fill: currentColor;
+		}
 	}
 }
