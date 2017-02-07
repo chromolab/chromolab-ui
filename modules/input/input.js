@@ -1,7 +1,20 @@
 import React, {Component} from 'react'
 
-import Icon from '../icon/icon'
-import Img from '../img/img'
+// import IconTel from '../icon/tel.svg'
+const icons = {
+	tel: require('../icon/tel.svg'),
+	user: require('../icon/user.svg'),
+	email: require('../icon/email.svg'),
+	password: require('../icon/password.svg'),
+	question: require('../icon/email.svg')
+}
+const iconsComponents = {
+	tel: <icons.tel className="input__icon" />,
+	name: <icons.user className="input__icon" />,
+	email: <icons.email className="input__icon" />,
+	password: <icons.password className="input__icon" />,
+	text: <icons.question className="input__icon" />,
+}
 
 class Input extends Component {
 	render() {
@@ -14,9 +27,13 @@ class Input extends Component {
 		} = this
 		delete props.className
 
+		const icon = iconsComponents[type]
+
 		return (
-			<div className={`input ${className ? '' : className}`}>
-				<Icon className="input__icon" type={type}><Img size="25" /></Icon>
+			<div className={`input ${className ? className : ''}`}>
+				{
+					icon
+				}
 				{
 					type === 'text'
 						? (

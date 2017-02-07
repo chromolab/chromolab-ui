@@ -32,6 +32,12 @@ module.exports = {
 			loaders: [
 				'json'
 			]
+		},{
+			test: /\.svg$/,
+			loaders: [
+				'babel',
+				'svg-react'
+			]
 		}]
 	},
 	plugins: [
