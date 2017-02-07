@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b4f53ee465e4391a1553"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "887b10fd6163b54fcef9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -32476,7 +32476,7 @@
 					{
 						className: 'intro',
 						style: {
-							backgroundImage: 'url(//placehold.alanev.ru/480x650.jpg)'
+							backgroundImage: 'url(http://placehold.alanev.ru/480x650.jpg)'
 						}
 					},
 					_react2.default.createElement(
