@@ -4,13 +4,13 @@ const writeFile = prms(fs.writeFile)
 const mkdir = require('./utils/mkdir')
 const favicons = require('favicons')
 
-const source = 'node_modules/chromolab-graphics/src/icons/chromolab.svg'
+const source = 'modules/icon/chromolab-icon.svg'
 const config = {
-	appName: 'Сияние',
-	appDescription: 'Сайт компании \"Сияние-Генподряд\"',
+	appName: 'Chromolab',
+	appDescription: 'Лаборатория клинических исследований',
 	developerName: 'alanev',
 	developerURL: 'http://alanev.ru',
-	background: '#15233c',
+	background: '#f4f4f4',
 	path: '/assets/icons',
 	display: 'standalone',
 	orientation: 'portrait',
