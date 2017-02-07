@@ -1,0 +1,16 @@
+.minicart{
+
+	display: flex;
+
+	// mods
+
+	// elements
+	&__{
+		&tube{
+			max-size: .5rem 2rem;
+		}
+		&coins{
+			max-size: 2.625rem;
+		}
+	}
+}

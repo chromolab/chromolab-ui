@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 
+import IconArrow from '../icon/arrow.svg'
+import Analizes from '../analyzes/analyzes'
+
 class Categories extends Component {
 	state = {
 		open: false
@@ -13,9 +16,11 @@ class Categories extends Component {
 				<div className={`category ${open ? 'category--open' : ''}`}>
 					<div className="category__name">
 						Общеклинические анализы
-						<span className="category__icon"></span>
+						<IconArrow className="category__icon" />
 					</div>
-					<div className="category__content"></div>
+					<div className="category__content">
+						<Analizes />
+					</div>
 				</div>
 			</div>
 		)

@@ -1,10 +1,13 @@
-/* stylelint-disable */
-.categories{
+.category{
 
 	// mods
 
 	// elements
 	&__{
+		&icon{
+			max-size: 2rem 1rem;
 
+			fill: currentColor;
+		}
 	}
 }

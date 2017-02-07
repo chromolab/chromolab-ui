@@ -1,7 +1,33 @@
 .menu{
 
-	background: $color;
 	color: white;
+
+	// mods
+	&:not(&--open) &__{
+		&link{
+			transform: translateX(-100%);
+
+			// mods
+			&:nth-child(1){
+				transition-delay: .6s;
+			}
+			&:nth-child(2){
+				transition-delay: .5s;
+			}
+			&:nth-child(3){
+				transition-delay: .4s;
+			}
+			&:nth-child(4){
+				transition-delay: .3s;
+			}
+			&:nth-child(5){
+				transition-delay: .2s;
+			}
+			&:nth-child(6){
+				transition-delay: .1s;
+			}
+		}
+	}
 
 	// elements
 	&__{
@@ -9,9 +35,40 @@
 			@extend %link;
 
 			display: block;
-			padding: 1.5rem *;
+			padding: 2rem *;
+
+			font-size: 1.5rem;
 
 			text-align: center;
+
+			transition-property: transform;
+			transition-duration: $transition;
+			will-change: transform;
+
+			// mods
+			&:nth-child(1){
+				background: color($color h(-5deg) s(-1%) l(-3%));
+			}
+			&:nth-child(2){
+				background: color($color h(-11deg) s(-2%) l(-6%));
+				transition-delay: .2s;
+			}
+			&:nth-child(3){
+				background: color($color h(-20deg) s(-3%) l(-9%));
+				transition-delay: .3s;
+			}
+			&:nth-child(4){
+				background: color($color h(-30deg) s(-5%) l(-11%));
+				transition-delay: .4s;
+			}
+			&:nth-child(5){
+				background: color($color h(-45deg) s(-8%) l(-14%));
+				transition-delay: .5s;
+			}
+			&:nth-child(6){
+				background: color($color h(-60deg) s(-5%) l(-15%));
+				transition-delay: .6s;
+			}
 		}
 	}
 }
