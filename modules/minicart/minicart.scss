@@ -1,6 +1,12 @@
 .minicart{
-
+	z-index: 2;
+	position: fixed;
+	top: 0;
+	left: 0;
 	display: flex;
+
+	height: 4.8125rem;
+	color: #fff;
 
 	// mods
 
@@ -8,9 +14,45 @@
 	&__{
 		&tube{
 			max-size: .5rem 2rem;
+			margin-right: 0.5rem;
+
+			fill: currentColor;
+			color: inherit;
 		}
 		&coins{
 			max-size: 2.625rem;
+		}
+		&amount{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 5rem;
+			font-size: 2rem;
+
+			background-color: $color--secondary;
+		}
+		&price{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			width: 12.5rem;
+			font-size: 2rem;
+
+			background-color: $color--primary;
+			&::after{
+				content: "₽";
+				margin-left: 0.75rem;
+			}
+		}
+		&button{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			width: 5rem;
+
+			background-color: $color--primary;
 		}
 	}
 }

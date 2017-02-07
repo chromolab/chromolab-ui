@@ -1,10 +1,104 @@
 /* stylelint-disable */
 .analysis{
-
+	margin-top: 2rem;
 	// mods
-
+	&--{
+		&open{
+			.analysis__content{
+				visibility: visible;
+				opacity: 1;
+				height: auto;
+			}
+		}
+	}
 	// elements
 	&__{
+		&title{
+			font-size: 1.25rem;
+			color: $color--primary;
+			cursor: pointer;
+		}
+		&info{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin-right: -2rem;
+			margin-top: 0.5rem;
+		}
+		&button{
+			position: relative;
+			box-sizing: border-box;
 
+			size: 4rem;
+			border: none;
+			background-color: $color--primary;
+			color: #fff;
+			cursor: pointer;
+			&::after{
+				content: "";
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				width: 1.5rem;
+				height: 0.25rem;
+				background-color: #fff;
+			}
+			&::before{
+				content: "";
+
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+				height: 1.5rem;
+				width: 0.25rem;
+				background-color: #fff;
+			}
+		}
+		&code{
+			font-size: 1.25rem;
+			color: $color--dim;
+		}
+		&time{
+			font-size: 1.25rem;
+			color: $color__black;
+		}
+		&price{
+			font-size: 1.5rem;
+			color: $color--tertiary;
+			&::after{
+				content: "₽";
+				margin-left: 0.5rem;
+				font-size: 1.25rem;
+			}
+		}
+		&content{
+			visibility: hidden;
+			opacity: 0;
+			height: 0;
+		}
+		&text{
+
+			height: 7rem;
+			overflow: hidden;
+
+			margin-top: 1rem;
+			font-size: 1.25rem;
+			color: $color__black;
+			&--{
+				&open{
+					height: auto;
+				}
+			}
+		}
+		&more{
+			margin-top: 1.5rem;
+			font-size: 1.25rem;
+			color: $color--primary;
+			text-decoration: underline;
+			cursor: pointer;
+		}
 	}
 }
