@@ -13,6 +13,11 @@
 
 	// elements
 	&__{
+		&callback-icon{
+			size: 2.5rem;
+
+			fill: $color;
+		}
 		&faq{
 			@extend %link;
 

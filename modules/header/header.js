@@ -1,7 +1,10 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router'
 
 import Menu from '../menu/menu'
-import Img from '../img/img'
+import IconUser from '../icon/user.svg'
+import IconChromolabIcon from '../icon/chromolab-icon.svg'
+import IconChromolabLogo from '../icon/chromolab-logo.svg'
 
 class Header extends Component {
 	state = {
@@ -12,6 +15,11 @@ class Header extends Component {
 			menu: !this.state.menu
 		})
 	}
+	hide() {
+		this.setState({
+			menu: false
+		})
+	}
 	render() {
 		const {
 			menu
@@ -20,11 +28,11 @@ class Header extends Component {
 		return (
 			<header className="header">
 				<div className={`header__nav ${menu ? 'header__nav--menu' : ''}`}>
-					<span className="header__user">
-						<Img size="45" alt="" className="header__user-image"/>
-					</span>
+					<Link to="/login" className="header__user">
+						<IconUser className="header__user-image" />
+					</Link>
 					<span className="header__icon">
-						<Img size="47x28" />
+						<IconChromolabIcon className="header__icon-logo" />
 					</span>
 					<span className="header__menu">
 						<span
@@ -35,13 +43,13 @@ class Header extends Component {
 							<span className="header__menu-line"></span>
 							<span className="header__menu-line"></span>
 						</span>
-						<div className="header__menu-list">
-							<Menu open={menu} />
+						<div className={`header__menu-list ${menu ? 'header__menu-list--menu' : ''}`}>
+							<Menu hide={::this.hide} open={menu} />
 						</div>
 					</span>
 				</div>
 				<div className="header__logo">
-					<Img size="272x38" />
+					<IconChromolabLogo className="header__logo-icon" width="272" height="38" />
 				</div>
 			</header>
 		)

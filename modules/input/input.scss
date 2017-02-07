@@ -1,31 +1,44 @@
 .input{
 
+	color: $color--dim;
+
 	display: flex;
 	justify-content: space-between;
+
+	// mods
 	&:not(:first-child){
 		margin-top: 1rem;
 	}
 
-	// mods
-
 	// elements
 	&__{
+		&icon{
+			max-size: 2rem;
+			min-width: 2rem;
+			margin: 1rem 1rem * *;
+
+			fill: currentColor;
+		}
 		&field{
 			box-sizing: border-box;
-			width: 100%;
+			min-width: initial;
+			max-width: initial;
+			width: initial;
 			height: 4rem;
-			line-height: 4rem;
 			padding: 0 1.625rem;
-			border: 0;
-			box-shadow: inset 2px 1px 3px rgba(0, 0, 0, 0.15);
-			border: 3px solid #f1f1f1;
-			background-color: #fff;
-			border-radius: 2rem;
+			border: 3px solid color(black a(.05));
 
-			font-family: "Gotham Pro";
+			font-family: inherit;
 			font-weight: 300;
 			font-size: 23px;
-			color: #747474;
+			line-height: 4rem;
+
+			background-color: white;
+			border-radius: 2rem;
+			box-shadow: inset 2px 1px 3px color(black a(.15));
+			color: inherit;
+
+			// mods
 			&::placeholder{
 				opacity: 1;
 			}
@@ -35,10 +48,5 @@
 				}
 			}
 		}
-	}
-	span{
-		display: block;
-		margin-right: 1rem;
-		line-height: 4rem;
 	}
 }

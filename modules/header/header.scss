@@ -1,17 +1,37 @@
 .header{
-	padding: * 1.5rem;
 
 	background-color: $color__bg;
 	// elements
 	&__{
+		&nav,
+		&logo{
+			padding: * 1.5rem;
+		}
 		&user{
-			overflow: hidden;
 			size: 2.8125rem;
-			border-radius: 50%;
+
+			fill: $color--dim;
+
+			overflow: hidden;
+
+			// mods
+			&--login{
+				border-radius: 50%;
+			}
+		}
+		&icon{
+
+			// subelements
+			&-{
+				&logo{
+					size: 3rem 1.75rem;
+				}
+			}
 		}
 		&nav{
 			padding: 1rem *;
 
+			position: relative;
 			display: flex;
 			align-items: center;
 			justify-content: space-between;
@@ -68,7 +88,14 @@
 					}
 				}
 				&list{
-					display: none;
+					position: absolute 100% 0 *;
+
+					transition: ;
+
+					&:not(&--menu){
+						opacity: 0;
+						visibility: hidden;
+					}
 				}
 			}
 		}
@@ -76,6 +103,13 @@
 			padding: * * 2rem;
 
 			text-align: center;
+
+			// subelements
+			&-{
+				&icon{
+					size: 17rem 2.375rem;
+				}
+			}
 		}
 	}
 }

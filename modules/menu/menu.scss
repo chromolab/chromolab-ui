@@ -1,10 +1,17 @@
-/* stylelint-disable */
 .menu{
 
-	// mods
+	background: $color;
+	color: white;
 
 	// elements
 	&__{
+		&link{
+			@extend %link;
 
+			display: block;
+			padding: 1.5rem *;
+
+			text-align: center;
+		}
 	}
 }
