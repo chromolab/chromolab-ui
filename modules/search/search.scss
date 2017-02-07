@@ -1,10 +1,19 @@
-/* stylelint-disable */
 .search{
 
 	// mods
 
 	// elements
 	&__{
+		&button{
+			padding: initial;
+			border: initial;
 
+			background-color: initial;
+		}
+		&icon{
+			max-size: 1.75rem;
+
+			fill: $color--dim;
+		}
 	}
 }
