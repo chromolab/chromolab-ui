@@ -18,7 +18,7 @@ class Cart extends Component {
 						<Extra />
 					</div>
 					<div className="cart__total">
-						Итого
+						Итого:
 						<span className="cart__total-sum">15 849</span>
 					</div>
 					<button className="cart__pay">
