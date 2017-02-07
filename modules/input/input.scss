@@ -26,17 +26,20 @@
 			width: initial;
 			height: 4rem;
 			padding: 0 1.625rem;
-			border: 3px solid color(black a(.05));
+			border: 2px solid color(black a(.05));
 
 			font-family: inherit;
 			font-weight: 300;
 			font-size: 23px;
-			line-height: 4rem;
 
 			background-color: white;
 			border-radius: 2rem;
 			box-shadow: inset 2px 1px 3px color(black a(.15));
 			color: inherit;
+			outline: none;
+			&:invalid{
+				border-color: $color--primary;
+			}
 
 			// mods
 			&::placeholder{
@@ -45,6 +48,7 @@
 			&--{
 				&text{
 					min-height: 8rem;
+					line-height: 4rem;
 				}
 			}
 		}

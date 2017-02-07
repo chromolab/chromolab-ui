@@ -1,11 +1,54 @@
 .header{
 
 	background-color: $color__bg;
+
+	// mods
+	&:not(&--menu) &__{
+		&nav,
+		&user,
+		&icon-logo,
+		&menu-list{
+			transition-delay: .6s;
+		}
+		&menu-list{
+			visibility: hidden;
+		}
+	}
+	&--menu &__{
+		&nav{
+			background: $color;
+		}
+		&user{
+			fill: white;
+		}
+		&menu-line{
+			background: white;
+
+			// mods
+			&:nth-child(2){
+				opacity: 0;
+			}
+			&:first-child,
+			&:last-child{
+				transform: rotate(45deg);
+			}
+			&:last-child{
+				transform: rotate(-45deg);
+			}
+		}
+		&icon-logo{
+			filter: brightness(0) invert(100%);
+		}
+	}
+
 	// elements
 	&__{
 		&nav,
 		&logo{
 			padding: * 1.5rem;
+		}
+		&nav{
+			transition-duration: $transition;
 		}
 		&user{
 			size: 2.8125rem;
@@ -25,6 +68,12 @@
 			&-{
 				&logo{
 					size: 3rem 1.75rem;
+
+					fill: url(#icon-chromolab-icon-a);
+
+					transition-property: filter;
+					transition-duration: $transition;
+					will-change: filter;
 				}
 			}
 		}
@@ -54,18 +103,6 @@
 						cursor: pointer;
 					}
 				}
-				&icon--menu &line{
-					&:nth-child(2){
-						opacity: 0;
-					}
-					&:first-child,
-					&:last-child{
-						transform: rotate(45deg);
-					}
-					&:last-child{
-						transform: rotate(-45deg);
-					}
-				}
 				&line{
 					width: 100%;
 					height: .25rem;
@@ -89,17 +126,11 @@
 				}
 				&list{
 					position: absolute 100% 0 *;
-
-					transition: ;
-
-					&:not(&--menu){
-						opacity: 0;
-						visibility: hidden;
-					}
+					z-index: $z-over-everything;
 				}
 			}
 		}
-		&logo{
+		&footer{
 			padding: * * 2rem;
 
 			text-align: center;

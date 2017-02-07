@@ -3,17 +3,23 @@
 
 	margin: 0 2.625rem 2rem;
 	// mods
-
 	// elements
 	&__{
 		&title{
 			font-size: 1.25rem;
 			color: #a0445a;
+			cursor: pointer;
 		}
 		&text{
+			display: block;
 			margin-top: 2rem;
 			font-size: 1.25rem;
 			color: #2e2e2e;
+			&--{
+				&closed{
+					display: none;
+				}
+			}
 		}
 	}
 }

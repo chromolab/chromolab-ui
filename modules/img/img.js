@@ -8,7 +8,7 @@ class Img extends Component {
 			className
 		} = this.props
 		const newProps = {
-			src: `//placehold.alanev.ru/${size}.jpg`,
+			src: `http://placehold.alanev.ru/${size}.jpg`,
 			alt,
 			className
 		}

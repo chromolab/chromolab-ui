@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router'
 
 import Input from '../input/input'
 
@@ -10,8 +11,8 @@ class Forget extends Component {
 				<Input type="email" />
 				<button className="form__button">Отправить</button>
 				<div className="form__footer">
-					<a href="#" className="form__link">Войти</a>
-					<a href="#" className="form__link">Регистрация</a>
+					<Link to="/login" className="form__link">Войти</Link>
+					<Link to="/reg" className="form__link">Регистрация</Link>
 				</div>
 			</form>
 		)

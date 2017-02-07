@@ -3,6 +3,7 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 
 import Reg from '../modules/reg/reg'
 import Page from '../modules/page/page'
+import Cart from '../modules/cart/cart'
 import Login from '../modules/login/login'
 import Intro from '../modules/intro/intro'
 import About from '../modules/about/about'
@@ -28,6 +29,10 @@ render(
 				<Route
 					path="catalog"
 					component={Catalog}
+				/>
+				<Route
+					path="cart"
+					component={Cart}
 				/>
 				<Route
 					path="callback"

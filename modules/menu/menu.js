@@ -4,10 +4,11 @@ import { Link } from 'react-router'
 class Menu extends Component {
 	render() {
 		const {
-			hide
+			hide,
+			open
 		} = this.props
 		return (
-			<div className="menu">
+			<div className={`menu ${open ? 'menu--open' : ''}`}>
 				<Link to="/search" onClick={hide} className="menu__link">Поиск анализов</Link>
 				<Link to="/catalog" onClick={hide} className="menu__link">Каталог анализов</Link>
 				<Link to="/cart" onClick={hide} className="menu__link">Корзина</Link>
