@@ -1,12 +1,11 @@
 .minicart{
-	z-index: 2;
-	position: fixed;
-	top: 0;
-	left: 0;
-	display: flex;
+	position: fixed 0 * * 0;
+	z-index: calc($z-over-everything + 10);
 
-	height: 4.8125rem;
-	color: #fff;
+	display: flex;
+	height: 4.8rem;
+
+	color: white;
 
 	// mods
 
@@ -14,7 +13,9 @@
 	&__{
 		&tube{
 			max-size: .5rem 2rem;
-			margin-right: 0.5rem;
+
+			margin-top: -.25em;
+			margin-right: .5rem;
 
 			fill: currentColor;
 			color: inherit;
@@ -24,11 +25,13 @@
 		}
 		&amount{
 			display: flex;
-			justify-content: center;
 			align-items: center;
+			justify-content: center;
 
 			width: 5rem;
+
 			font-size: 2rem;
+			line-height: 1;
 
 			background-color: $color--secondary;
 		}
@@ -40,10 +43,10 @@
 			width: 12.5rem;
 			font-size: 2rem;
 
-			background-color: $color--primary;
+			background-color: $color;
 			&::after{
 				content: "₽";
-				margin-left: 0.75rem;
+				margin-left: .75rem;
 			}
 		}
 		&button{
@@ -52,7 +55,7 @@
 			align-items: center;
 			width: 5rem;
 
-			background-color: $color--primary;
+			background-color: $color;
 		}
 	}
 }

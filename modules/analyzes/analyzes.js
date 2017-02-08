@@ -6,7 +6,7 @@ class Analyzes extends Component {
 	render() {
 		return (
 			<div className="analyzes">
-				<Analysis />
+				<Analysis short />
 			</div>
 		)
 	}

@@ -49,7 +49,7 @@
 			align-items: center;
 
 			// mods
-			&::nth-child(2n-1){
+			&:nth-child(2n-1){
 				background-color: #bc265f;
 			}
 		}
@@ -74,7 +74,7 @@
 			&::after{
 				content: "₽";
 				font-size: 1rem;
-				margin-left: 0.5rem;
+				margin-left: .5rem;
 			}
 		}
 		&button{

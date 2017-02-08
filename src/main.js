@@ -7,9 +7,11 @@ import Cart from '../modules/cart/cart'
 import Login from '../modules/login/login'
 import Intro from '../modules/intro/intro'
 import About from '../modules/about/about'
+import Analysis from '../modules/analysis/analysis'
 import Forget from '../modules/forget/forget'
 import Catalog from '../modules/catalog/catalog'
 import Success from '../modules/success/success'
+import Contacts from '../modules/contacts/contacts'
 import Callback from '../modules/callback/callback'
 import Question from '../modules/question/question'
 import Discounts from '../modules/discount/discounts'
@@ -31,8 +33,16 @@ render(
 					component={Catalog}
 				/>
 				<Route
+					path="catalog/:code"
+					component={Analysis}
+				/>
+				<Route
 					path="cart"
 					component={Cart}
+				/>
+				<Route
+					path="contacts"
+					component={Contacts}
 				/>
 				<Route
 					path="callback"
