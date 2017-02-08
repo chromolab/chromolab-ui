@@ -38,7 +38,7 @@
 			}
 		}
 		&footer{
-			margin: 2rem *;
+			margin: 2rem * 3rem;
 		}
 		&button{
 			@extend %link;
@@ -63,6 +63,9 @@
 
 				cursor: pointer;
 			}
+		}
+		&search{
+			margin-top: 3rem;
 		}
 	}
 }
