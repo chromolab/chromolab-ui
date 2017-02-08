@@ -30,7 +30,6 @@ contacts:
 input:
 icon:
 form:
-analyz:
 analyzes:
 analysis:
 categories:
@@ -43,3 +42,4 @@ tabs:
 minicart:
 extra:
 category:
+place:
