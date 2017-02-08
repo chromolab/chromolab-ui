@@ -10,7 +10,69 @@
 	&__{
 		&map{
 			flex: 1;
-			margin: * -2rem;
+			margin: -4.5rem -2rem *;
+		}
+	}
+}
+// haks
+.gm-style > div:nth-child(1) > div:nth-child(1){
+	z-index: 10 !important;
+}
+.gm-style > div:nth-child(1) > div:nth-child(1) > div:nth-child(2){
+	z-index: 105 !important;
+}
+.contacts-info{
+	position: absolute;
+	z-index: calc($z-over * 100);
+
+	width: 20rem;
+
+	font-size: 1rem;
+
+	// mods
+	&:hover{
+		cursor: default;
+	}
+	&:not(._open) &__content{
+		opacity: 0;
+	}
+
+	// elements
+	&__{
+		&marker{
+			position: absolute .5rem * * 1rem;
+			z-index: $z-over;
+
+			max-size: 2.25rem 3rem;
+		}
+		&content{
+			padding: .5rem .75rem .5rem 4.125rem;
+
+			background-color: white;
+			border-radius: 1rem;
+			box-shadow: 2px 3px 10px color(black a(.75));
+
+			transition: ;
+		}
+		&metro{
+			margin: * * .25rem;
+
+			font-weight: 500;
+		}
+		&time{
+			margin: .5rem *;
+
+			white-space: pre-wrap;
+
+			color: gray(45%);
+		}
+		&link{
+			color: inherit;
+
+			// mods
+			&:hover{
+				text-decoration: none;
+			}
 		}
 	}
 }

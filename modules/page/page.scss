@@ -44,6 +44,9 @@
 			flex: 1;
 		}
 		&title{
+			position: relative;
+			z-index: $z-over;
+
 			font-size: 1.875rem;
 			font-weight: 500;
 

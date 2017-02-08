@@ -14,7 +14,8 @@ const titles = {
 	question: 'Задать вопрос специалисту',
 	callback: 'Обратный звонок',
 	forget: 'Забыли пароль?',
-	cart: 'Моя корзина'
+	cart: 'Моя корзина',
+	contacts: 'Где сдать'
 }
 
 class Page extends Component {
@@ -25,7 +26,9 @@ class Page extends Component {
 				pathname
 			}
 		} = this.props
-		const page = pathname.split('/')[1] || 'root'
+		const paths = pathname.split('/')
+		const page = paths[1] || 'root'
+		const innerPage = paths[2] || null
 		const title = titles[page] || ''
 
 		return (
@@ -45,7 +48,7 @@ class Page extends Component {
 						key={page}
 					>
 						{
-							title
+							title && !innerPage
 								? (
 									<h1 className="page__title">{title}</h1>
 								)

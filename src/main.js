@@ -4,13 +4,14 @@ import { Router, Route, IndexRoute, hashHistory } from 'react-router'
 import Reg from '../modules/reg/reg'
 import Page from '../modules/page/page'
 import Cart from '../modules/cart/cart'
+import Place from '../modules/place/place'
 import Login from '../modules/login/login'
 import Intro from '../modules/intro/intro'
 import About from '../modules/about/about'
-import Analysis from '../modules/analysis/analysis'
 import Forget from '../modules/forget/forget'
 import Catalog from '../modules/catalog/catalog'
 import Success from '../modules/success/success'
+import Analysis from '../modules/analysis/analysis'
 import Contacts from '../modules/contacts/contacts'
 import Callback from '../modules/callback/callback'
 import Question from '../modules/question/question'
@@ -43,6 +44,10 @@ render(
 				<Route
 					path="contacts"
 					component={Contacts}
+				/>
+				<Route
+					path="contacts/:id"
+					component={Place}
 				/>
 				<Route
 					path="callback"
