@@ -6,18 +6,27 @@
 
 	// elements
 	&__{
+		&input{
+			display: none;
+		}
+		&input._vergin._required ~ &button,
+		&input._invalid ~ &button{
+			background-color: $color__gray;
+		}
 		&button{
 			width: 100%;
 			height: 4rem;
-			margin-top: 1.5rem;
 			border: 0;
-			border-radius: 2rem;
+			margin-top: 1.5rem;
+			outline: none;
+
 			font-size: 1.5rem;
 			font-weight: 500;
-			color: #fff;
-			background-color: $color__purple;
 
-			outline: none;
+			border-radius: 2rem;
+			background-color: $color__purple;
+			color: #fff;
+
 			cursor: pointer;
 
 			// mods

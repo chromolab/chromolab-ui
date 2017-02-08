@@ -143,14 +143,6 @@ class Contacts extends Component {
 					styles: mapStyles
 				})
 			places.forEach(place => {
-				const {
-					position
-				} = place
-				new googleMaps.Marker({
-					map,
-					position,
-					animation: googleMaps.Animation.DROP
-				})
 				const Overlay = overlay(googleMaps)
 				new Overlay(map, place)
 			})

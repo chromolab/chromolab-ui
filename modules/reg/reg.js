@@ -7,9 +7,19 @@ class Reg extends Component {
 	render() {
 		return (
 			<form className="form reg">
-				<Input type="email" />
-				<Input type="password" />
-				<Input type="password" />
+				<Input
+					type="email"
+					required
+				/>
+				<Input
+					type="password"
+					required
+				/>
+				<Input
+					type="password"
+					required
+					placeholder="Повторите пароль"
+				/>
 				<button className="form__button">Регистрация</button>
 				<Social />
 			</form>

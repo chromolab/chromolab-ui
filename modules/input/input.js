@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { findDOMNode } from 'react-dom'
 
 // import IconTel from '../icon/tel.svg'
 const icons = {
@@ -8,40 +9,73 @@ const icons = {
 	password: require('../icon/password.svg'),
 	question: require('../icon/email.svg')
 }
-const iconsComponents = {
-	tel: <icons.tel className="input__icon" />,
-	name: <icons.user className="input__icon" />,
-	email: <icons.email className="input__icon" />,
-	password: <icons.password className="input__icon" />,
-	text: <icons.question className="input__icon" />,
+const placeholders = {
+	tel: 'Телефон',
+	user: 'Имя',
+	email: 'E-mail',
+	password: 'Пароль',
+	question: 'Вопрос'
 }
 
 class Input extends Component {
+	state = {
+		value: null,
+		valid: true
+	}
+	_updateValue({ target : { value } }) {
+		this.setState({
+			value
+		})
+		this._validate()
+	}
+	_validate() {
+		const field = findDOMNode(this.refs.field)
+		this.setState({
+			valid: field.validity.valid
+		})
+	}
 	render() {
 		const {
+			state: {
+				valid,
+				value
+			},
 			props,
 			props: {
+				component,
 				type,
-				className
+				required,
+				name = type,
+				placeholder = placeholders[type],
 			}
 		} = this
-		delete props.className
-
-		const icon = iconsComponents[type]
+		const newProps = {...props}
+		delete newProps.valid
+		delete newProps.component
 
 		return (
-			<div className={`input ${className ? className : ''}`}>
+			<div className={`form__input input ${valid ? '_valid' : '_invalid'} ${value === null ? '_vergin' : '_dirty'} ${required ? '_required' : '_nometter' }`}>
 				{
-					icon
+					React.createElement(
+						component || 'input',
+						{
+							ref: 'field',
+							...newProps,
+							type,
+							name,
+							placeholder,
+							className: `input__field input__field--${type}`,
+							onChange: ::this._updateValue
+						}
+					)
 				}
 				{
-					type === 'text'
-						? (
-							<textarea name={type} className="input__field input__field--text" {...props} ></textarea>
-						)
-						: (
-							<input type={type} name={type} className="input__field" {...props} />
-						)
+					React.createElement(
+						icons[name],
+						{
+							className: 'input__icon'
+						}
+					)
 				}
 			</div>
 		)
