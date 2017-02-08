@@ -8,6 +8,7 @@
 	font-size: 1.5rem;
 
 	background-size: cover;
+	background-color: $color__bg;
 	background-repeat: no-repeat;
 
 	color: white;
@@ -36,12 +37,19 @@
 				text-decoration: none;
 			}
 		}
+		&footer{
+			margin: 2rem *;
+		}
 		&button{
+			@extend %link;
+
 			padding: 1rem;
 			border: initial;
 			margin: initial;
 
 			font-size: inherit;
+
+			text-align: center;
 
 			border-radius: 2rem;
 			background: $color--tertiary;

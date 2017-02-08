@@ -17,8 +17,10 @@
 
 			outline: none;
 			cursor: pointer;
+
+			// mods
 			&:hover{
-				opacity: 0.9;
+				opacity: .9;
 			}
 			&:disabled{
 				background-color: $color__gray;
@@ -41,6 +43,7 @@
 			color: $color--primary;
 			font-weight: 500;
 
+			// mods
 			&:not(:last-child){
 				margin-right: 2rem;
 			}

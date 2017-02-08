@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import { Link } from 'react-router'
 
 import Search from '../search/search'
 
@@ -17,7 +18,7 @@ class Intro extends Component {
 					<Search />
 				</div>
 				<div className="intro__footer">Посетите сайт <br/><a href="http://medcentr.ru" className="intro__link">medcentr.ru</a></div>
-				<button className="intro__button">Поиск по каталогу</button>
+				<Link to="/catalog" className="intro__button">Поиск по каталогу</Link>
 			</div>
 		)
 	}
