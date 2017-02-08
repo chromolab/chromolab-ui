@@ -8,8 +8,14 @@ class Login extends Component {
 	render() {
 		return (
 			<form className="form login">
-				<Input type="email" />
-				<Input type="password" />
+				<Input
+					type="email"
+					required
+				/>
+				<Input
+					type="password"
+					required
+				/>
 				<button className="form__button">Войти</button>
 				<Social />
 				<div className="form__footer">

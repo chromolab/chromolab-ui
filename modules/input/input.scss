@@ -9,15 +9,28 @@
 	&:not(:first-child){
 		margin-top: 1rem;
 	}
+	&._invalid &__,
+	&--invalid &__{
+		&field{
+			border-color: $color--primary;
+		}
+	}
 
 	// elements
 	&__{
 		&icon{
+			order: -1;
+
 			max-size: 2rem;
 			min-width: 2rem;
 			margin: 1rem 1rem * *;
 
+			transition: ;
+
 			fill: currentColor;
+		}
+		&field:focus + &icon{
+			color: color($color--dim l(-20%));
 		}
 		&field{
 			box-sizing: border-box;
@@ -38,9 +51,6 @@
 			color: inherit;
 			outline: none;
 			appearance: none;
-			&:invalid{
-				border-color: $color--primary;
-			}
 
 			// mods
 			&::placeholder{

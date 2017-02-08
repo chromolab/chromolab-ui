@@ -8,7 +8,10 @@ class Forget extends Component {
 		return (
 			<form className="form forget">
 				<div className="form__header">Введите e-mail, указанный <br/>при регистрации.</div>
-				<Input type="email" />
+				<Input
+					type="email"
+					required
+				/>
 				<button className="form__button">Отправить</button>
 				<div className="form__footer">
 					<Link to="/login" className="form__link">Войти</Link>
