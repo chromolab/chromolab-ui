@@ -6,7 +6,7 @@ class Search extends Component {
 	render() {
 		return (
 			<from className="search">
-				<input type="text" className="seach__field" placeholder="найдите анализ" />
+				<input type="text" className="search__field" placeholder="найдите анализ" />
 				<button className="search__button">
 					<IconLoupe className="search__icon" />
 				</button>

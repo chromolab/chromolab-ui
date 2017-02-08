@@ -1,10 +1,23 @@
 /* stylelint-disable */
 .tabs{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
 
+	padding: 1.25rem 0;
 	// mods
 
 	// elements
 	&__{
+		&tab{
+			font-size: 1.5rem;
 
+			&:not(._active){
+				cursor: pointer;
+			}
+			&._active{
+				font-weight: 700;
+			}
+		}
 	}
 }
