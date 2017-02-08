@@ -85,6 +85,7 @@
 			background-color: $color--primary;
 			color: #fff;
 			cursor: pointer;
+			user-select: none;
 		}
 		&arrow{
 			max-width: 2rem;
