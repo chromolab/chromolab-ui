@@ -37,7 +37,6 @@ export default function (googleMaps) {
 			Object.assign(div.style, {
 				position: 'absolute'
 			})
-			div.classList.add('very-very-unic-class')
 			div.innerHTML = this.tmpl
 			this.div = div
 			const panes = this.getPanes()

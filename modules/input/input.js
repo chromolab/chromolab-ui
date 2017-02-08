@@ -7,7 +7,7 @@ const icons = {
 	user: require('../icon/user.svg'),
 	email: require('../icon/email.svg'),
 	password: require('../icon/password.svg'),
-	question: require('../icon/email.svg')
+	question: require('../icon/question.svg')
 }
 const placeholders = {
 	tel: 'Телефон',

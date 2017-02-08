@@ -3,6 +3,7 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 import { trs } from '../config/config.props'
 
+import Back from '../back/back'
 import Header from '../header/header'
 import Footer from '../footer/footer'
 
@@ -17,6 +18,7 @@ const titles = {
 	cart: 'Моя корзина',
 	contacts: 'Где сдать'
 }
+const backs = ['callback', 'login', 'reg', 'forget', 'question', 'contacts']
 
 class Page extends Component {
 	render() {
@@ -30,6 +32,7 @@ class Page extends Component {
 		const page = paths[1] || 'root'
 		const innerPage = paths[2] || null
 		const title = titles[page] || ''
+		const isBack = backs.some(back => page == back)
 
 		return (
 			<div className="page">
@@ -47,6 +50,15 @@ class Page extends Component {
 						className="page__content"
 						key={page}
 					>
+						{
+							isBack
+								? (
+									<div className="page__back">
+										<Back router={this.props.router} />
+									</div>
+								)
+								: null
+						}
 						{
 							title && !innerPage
 								? (

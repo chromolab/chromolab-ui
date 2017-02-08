@@ -1,5 +1,8 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+
+import { trs } from '../config/config.props'
 
 import Menu from '../menu/menu'
 import Search from '../search/search'
@@ -57,19 +60,27 @@ class Header extends Component {
 						</div>
 					</span>
 				</div>
-				<div className="header__footer">
+				<ReactCSSTransitionGroup
+					component="div"
+					className="header__footer"
+					transitionName="header__footer"
+					transitionEnterTimeout={trs}
+					transitionLeaveTimeout={trs}
+				>
 					{
 						catalog
 							? (
-								<Search />
+								<div key={catalog} className="header__search">
+									<Search autoFocus={true} />
+								</div>
 							)
 							: (
-								<Link to="/">
+								<Link key={catalog} to="/" className="header__logo">
 									<IconChromolabLogo className="header__logo-icon" width="272" height="38" />
 								</Link>
 							)
 					}
-				</div>
+				</ReactCSSTransitionGroup>
 			</header>
 		)
 	}

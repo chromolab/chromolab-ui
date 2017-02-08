@@ -1,12 +1,24 @@
-/* stylelint-disable */
 .discount{
 
 	margin: 0 0 2rem;
+
 	// mods
+	&--open &__{
+		&title{
+			text-decoration: none;
+		}
+		&text{
+			display: none;
+		}
+	}
+
 	// elements
 	&__{
 		&title{
 			font-size: 1.25rem;
+
+			text-decoration: underline;
+
 			color: #a0445a;
 			cursor: pointer;
 		}
@@ -15,11 +27,6 @@
 			margin-top: 2rem;
 			font-size: 1.25rem;
 			color: #2e2e2e;
-			&--{
-				&closed{
-					display: none;
-				}
-			}
 		}
 	}
 }

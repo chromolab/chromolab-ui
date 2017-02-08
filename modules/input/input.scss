@@ -33,6 +33,7 @@
 			color: color($color--dim l(-20%));
 		}
 		&field{
+			flex: 1;
 			box-sizing: border-box;
 			min-width: initial;
 			max-width: initial;
