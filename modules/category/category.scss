@@ -1,0 +1,33 @@
+/* stylelint-disable */
+.category{
+
+	// mods
+	&--{
+		&close{
+			.category__content{
+				display: none;
+			}
+			.category__icon{
+				transform: rotate(-180deg);
+			}
+		}
+	}
+	// elements
+	&__{
+		&name{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			margin: * -2rem;
+			padding: 1rem 2rem;
+			line-height: 2.25rem;
+
+			font-size: 1.5rem;
+
+			background-color: $color__bg;
+		}
+		&icon{
+			cursor: pointer;
+		}
+	}
+}
