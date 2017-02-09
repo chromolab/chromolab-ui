@@ -11,7 +11,7 @@
     "watch": "node tasks/watch",
     "favicon": "node tasks/favicons",
     "modernizr": "modernizr -c .modernizr.json -d build/",
-    "build": "npm run fonts && npm run modernizr && npm run build:light",
+    "build": "npm run fonts && npm run favicon && npm run modernizr && npm run build:light",
     "build:light": "npm run styles && npm run templates && npm run scripts",
     "test": "ava test/*.js",
     "posttest": "npm run lint",
