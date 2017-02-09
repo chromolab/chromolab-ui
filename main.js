@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "567f10827bf5aea4d40c"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "877856944388541e8cd9"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -34324,7 +34324,7 @@
 	    displayName: "Cross",
 
 	    getDefaultProps: function getDefaultProps() {
-	        return { "viewBox": "0 0 56 56" };
+	        return { "xmlns": "http://www.w3.org/2000/svg", "viewBox": "0 0 56 56" };
 	    },
 	    componentDidMount: function componentDidMount() {
 	        helpers.applyXmlAttributes(this);
