@@ -4,6 +4,9 @@ import { Link } from 'react-router'
 import Search from '../search/search'
 
 class Intro extends Component {
+	_focus() {
+		this.props.router.push('/catalog')
+	}
 	render() {
 		return (
 			<div
@@ -15,7 +18,7 @@ class Intro extends Component {
 				<h1 className="intro__title">Медицинский центр <br/>на Комсомольской</h1>
 				<div className="intro__warn">СКОРО ОТКРЫТИЕ</div>
 				<div className="intro__search">
-					<Search />
+					<Search onFocus={::this._focus} />
 				</div>
 				<div className="intro__footer">Посетите сайт <br/><a href="http://medcentr.ru" className="intro__link">medcentr.ru</a></div>
 				<Link to="/catalog" className="intro__button">Поиск по каталогу</Link>

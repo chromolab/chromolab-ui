@@ -1,6 +1,16 @@
 .category{
 
 	// mods
+	&:not(&--open) &__{
+		&content{
+			display: none;
+		}
+	}
+	&--open &__{
+		&icon{
+			transform: rotate(.5turn);
+		}
+	}
 
 	// elements
 	&__{
@@ -8,6 +18,8 @@
 			max-size: 2rem 1rem;
 
 			fill: currentColor;
+
+			transition: ;
 		}
 	}
 }

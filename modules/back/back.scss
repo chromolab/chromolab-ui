@@ -1,0 +1,14 @@
+.back{
+
+	// mods
+	&:hover{
+		cursor: pointer;
+	}
+
+	// elements
+	&__{
+		&icon{
+			max-size: 1.125rem;
+		}
+	}
+}

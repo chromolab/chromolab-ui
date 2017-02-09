@@ -43,11 +43,9 @@
 
 	// elements
 	&__{
-		&nav,
-		&logo{
-			padding: * 1.5rem;
-		}
 		&nav{
+			padding: * 2rem;
+
 			transition-duration: $transition;
 		}
 		&user{
@@ -131,9 +129,29 @@
 			}
 		}
 		&footer{
+			height: 3rem;
 			padding: * 1.5rem 1.5rem 1.5rem;
+			margin: * 1.5rem;
 
 			text-align: center;
+
+			position: relative;
+
+			// anim
+			&-enter{
+				opacity: .01;
+			}
+			&-enter&-enter-active{
+				opacity: 1;
+				transition: opacity $trsn ease-in;
+			}
+			&-leave{
+				opacity: 1;
+			}
+			&-leave&-leave-active{
+				opacity: .01;
+				transition: opacity $trsn ease-in;
+			}
 
 			// subelements
 			&-{
@@ -141,6 +159,10 @@
 					size: 17rem 2.375rem;
 				}
 			}
+		}
+		&logo,
+		&search{
+			position: absolute * 0;
 		}
 	}
 }

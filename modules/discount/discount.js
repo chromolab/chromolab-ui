@@ -20,9 +20,9 @@ class Discount extends Component {
 			}
 		} = this
 		return (
-			<div className="discount">
+			<div className={`discount ${open ? 'discount--open' : 'discount--closed'}`}>
 				<div className="discount__title" onClick={::this._toggle}>{title}</div>
-				<div className={`discount__text ${open ? 'discount__text--open' : 'discount__text--closed'}`}>{text}</div>
+				<div className="discount__text">{text}</div>
 			</div>
 		)
 	}

@@ -42,7 +42,7 @@ render(
 					component={Cart}
 				/>
 				<Route
-					path="contacts"
+					path="map"
 					component={Contacts}
 				/>
 				<Route
