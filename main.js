@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "38a1482e907aeac8f123"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e09e37a3af688096fec4"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -34616,17 +34616,45 @@
 		(0, _inherits3.default)(Search, _Component);
 
 		function Search() {
+			var _ref;
+
+			var _temp, _this, _ret;
+
 			(0, _classCallCheck3.default)(this, Search);
-			return (0, _possibleConstructorReturn3.default)(this, (Search.__proto__ || (0, _getPrototypeOf2.default)(Search)).apply(this, arguments));
+
+			for (var _len = arguments.length, args = Array(_len), _key = 0; _key < _len; _key++) {
+				args[_key] = arguments[_key];
+			}
+
+			return _ret = (_temp = (_this = (0, _possibleConstructorReturn3.default)(this, (_ref = Search.__proto__ || (0, _getPrototypeOf2.default)(Search)).call.apply(_ref, [this].concat(args))), _this), _this.state = {
+				empty: true
+			}, _temp), (0, _possibleConstructorReturn3.default)(_this, _ret);
 		}
 
 		(0, _createClass3.default)(Search, [{
+			key: '_toggle',
+			value: function _toggle(_ref2) {
+				var value = _ref2.target.value;
+
+				this.setState({
+					empty: value == ''
+				});
+			}
+		}, {
 			key: 'render',
 			value: function render() {
+				var empty = this.state.empty;
+
+
 				return _react2.default.createElement(
 					'from',
 					{ className: 'search' },
-					_react2.default.createElement('input', (0, _extends3.default)({ type: 'text', className: 'search__field', placeholder: '\u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u0430\u043D\u0430\u043B\u0438\u0437' }, this.props)),
+					_react2.default.createElement('input', (0, _extends3.default)({
+						type: 'text',
+						className: 'search__field ' + (empty ? '_empty' : '_filled'),
+						placeholder: '\u043D\u0430\u0439\u0434\u0438\u0442\u0435 \u0430\u043D\u0430\u043B\u0438\u0437' }, this.props, {
+						onChange: this._toggle.bind(this)
+					})),
 					_react2.default.createElement(
 						'button',
 						{ className: 'search__button' },
@@ -36330,10 +36358,10 @@
 					{ className: 'categorys' },
 					_react2.default.createElement(
 						'div',
-						{ className: 'category ' + (open ? 'category--open' : ''), onClick: this._toggle.bind(this) },
+						{ className: 'category ' + (open ? 'category--open' : '') },
 						_react2.default.createElement(
 							'div',
-							{ className: 'category__name' },
+							{ className: 'category__name', onClick: this._toggle.bind(this) },
 							'\u041E\u0431\u0449\u0435\u043A\u043B\u0438\u043D\u0438\u0447\u0435\u0441\u043A\u0438\u0435 \u0430\u043D\u0430\u043B\u0438\u0437\u044B',
 							_react2.default.createElement(_arrow2.default, { className: 'category__icon' })
 						),
