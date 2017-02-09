@@ -131,7 +131,7 @@ const places = [
 class Contacts extends Component {
 	_map() {
 		loadGoogleMapsAPI({
-			googleKey,
+			key: googleKey,
 			language: 'ru'
 		}).then(googleMaps => {
 			const map =
