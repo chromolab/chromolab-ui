@@ -65,7 +65,7 @@
 /******/ 	}
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "8de0b21bb020e0ed9432"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "3f2c2d43eba27d7411ef"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
 /******/ 	
@@ -36689,7 +36689,7 @@
 				var _this2 = this;
 
 				(0, _loadGoogleMapsApi2.default)({
-					googleKey: _config.googleKey,
+					key: _config.googleKey,
 					language: 'ru'
 				}).then(function (googleMaps) {
 					var map = new googleMaps.Map(_this2.refs.map, {
