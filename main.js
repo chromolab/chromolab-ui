@@ -35784,7 +35784,7 @@
 
 	exports.default = function (path, options) {
 		return new _promise2.default(function (resolve, reject) {
-			fetch('//www.chromolab.ru/api/' + path, options).then(function (res) {
+			fetch('http://www.chromolab.ru/api/' + path, options).then(function (res) {
 				return res.text();
 			}).then(function (data) {
 				return (0, _utils.prepareHTML)(data);
