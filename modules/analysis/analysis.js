@@ -9,12 +9,12 @@ class Analysis extends Component {
 		fullText: false,
 		added: false
 	}
-	cart() {
+	cart = () => {
 		this.setState({
 			added: !this.state.added
 		})
 	}
-	toggleText() {
+	toggleText = () => {
 		this.setState({
 			fullText: !this.state.fullText
 		})
@@ -26,7 +26,8 @@ class Analysis extends Component {
 				added,
 			},
 			props: {
-				short
+				short,
+				data
 			}
 		} = this
 
@@ -36,21 +37,21 @@ class Analysis extends Component {
 					short
 						? (
 							<Link
-								to="/catalog/code"
+								to={`/catalog/${data.id}`}
 								className="analysis__title"
-							>Профиль "Стресс и гормоны надпочечников"</Link>
+							>{data.name}</Link>
 						)
 						: (
-							<div className="analysis__title">Профиль "Стресс и гормоны надпочечников"</div>
+							<div className="analysis__title">{data.name}</div>
 						)
 				}
 				<div className="analysis__info">
-					<span className="analysis__code">gs-1</span>
-					<span className="analysis__time">4 дн.</span>
-					<span className="analysis__price">2 592</span>
+					<span className="analysis__code">{data.code}</span>
+					<span className="analysis__time">{data.duration} дн.</span>
+					<span className="analysis__price">{data.price}</span>
 					<button
 						className={`analysis__button ${added ? 'analysis__button--added' : 'analysis__button--removed' }`}
-						onClick={::this.cart}
+						onClick={this.cart}
 					></button>
 				</div>
 				{
@@ -58,13 +59,11 @@ class Analysis extends Component {
 						? (
 							<div className="analysis__content">
 								<div className={`analysis__text ${fullText ? 'analysis__text--open' : 'analysis__text--close'}`}>
-									Своих щеке несколько переписали одна повстречался имени букв над. Пояс дороге себя строчка парадигматическая, гор грамматики рекламных, рот инициал не языком семь букв. Текстов инициал живет большой наш, он языкового.
-										Диких строчка жаренные переписывается решила что города заглавных сих рукописи продолжил страну, заголовок подзаголовок пунктуация рот буквоград раз семантика приставка, возвращайся рукопись, вершину от всех. Текст, выйти своих своего его переписывается.
-										Парадигматическая путь маленький то живет злых до его родного эта решила о моей рот города, возвращайся безопасную заголовок рыбными раз она, пояс великий переписали силуэт продолжил. Несколько, решила, буквенных. Всеми.
+									{data.description}
 								</div>
 								<div
 									className="analysis__more"
-									onClick={::this.toggleText}
+									onClick={this.toggleText}
 								>Подробнее</div>
 								<div className="analysis__footer">
 									<div className="analysis__tab">

@@ -4,7 +4,7 @@ class Discount extends Component {
 	state = {
 		open: false
 	}
-	_toggle() {
+	_toggle = () => {
 		this.setState({
 			open: !this.state.open
 		})
@@ -21,7 +21,7 @@ class Discount extends Component {
 		} = this
 		return (
 			<div className={`discount ${open ? 'discount--open' : 'discount--closed'}`}>
-				<div className="discount__title" onClick={::this._toggle}>{title}</div>
+				<div className="discount__title" onClick={this._toggle}>{title}</div>
 				<div className="discount__text">{text}</div>
 			</div>
 		)

@@ -1,15 +1,40 @@
 import React, {Component} from 'react'
 
+import { api } from '../utils/utils'
+import Preloader from '../preloader/preloader'
+
 class Place extends Component {
-	render() {
+	state = {
+		data: null
+	}
+	_getContent = () => {
+		const {
+			metro,
+			address,
+			time,
+			driveway,
+		} = this.state.data[this.props.params.id]
+
 		return (
 			<div className="place">
-				<div className="place__metro">м. Октябрьская</div>
-				<address className="place__address">Калужская площадь, д. 1, стр. 1</address>
-				<div className="place__time">Будни: 10:00 - 20:00 <br/>Суббота, Воскресеннье: 9:00 - 17:00</div>
-				<div className="place__text">М. Октябрьская (кольцевая). <br/>Далее перейти по подземному переходу через Ленинский проспект, при выходе направо. <br/>Как подниметесь наверх, слева от Вас дом "Здание детской библиотеки" (ориентир: ресторан Сбарро и обменный пункт), на углу находится Аптека, за ней, перед рестораном "Пикодилья" (2-х этажное здание), повернуть налево, пройти мимо магазина фототехники, дойти до палатки с газетами и журналами, повернуть налево, металлический забор для входа во внутренний двор. <br/>Слева на стене вывеска: процедурный на ОКТЯБРЬСКОЙ!<br/>Пройти по стрелке и Вы у нас! </div>
+				<div className="place__metro">{metro}</div>
+				<address className="place__address">{address}</address>
+				<div className="place__time">{time}</div>
+				<div className="place__text">{driveway}</div>
 			</div>
 		)
+	}
+	componentWillMount() {
+		api('contacts')
+			.then(data => {
+				this.setState({
+					data
+				})
+			})
+	}
+	render() {
+		const { data } = this.state
+		return data ? this._getContent() : <Preloader />
 	}
 }
 

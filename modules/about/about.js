@@ -1,13 +1,35 @@
 import React, {Component} from 'react'
 
+import { api } from '../utils/utils'
+import Preloader from '../preloader/preloader'
+
 class About extends Component {
-	render() {
-		const text = 'Научно-лабораторный комплекс Chromolab – это экспертные медицинские технологии, быстрая и точная диагностика заболеваний. Мы предлагаем более 1500 исследований с применением фундаментальных знаний и новейших разработок. \nНаш богатый опыт позволяет предоставить вам редкие и уникальные виды лабораторных исследований. \nС нами сотрудничают крупнейшие медицинские центры, лаборатории и больницы. Опыт и квалификация сотрудников Chromolab гарантируют нашим пациентам точные результаты исследований по самым низким ценам. \nМы используем лучшее оборудование, произведённое в Европе и Японии. Технологии, внедрённые нами, считаются золотым стандартом в мировой диагностической медицине, но в России чрезвычайно редки. \nChromolab – ваше здоровье в надёжных руках!'
+	state = {
+		data: null
+	}
+
+	_getContent = () => {
+		const {
+			content
+		} = this.state.data
+
 		return (
 			<div className="about">
-				{text}
+				{content}
 			</div>
 		)
+	}
+	componentWillMount() {
+		api('about')
+			.then(data => {
+				this.setState({
+					data
+				})
+			})
+	}
+	render() {
+		const { data } = this.state
+		return data ? this._getContent() : <Preloader />
 	}
 }
 

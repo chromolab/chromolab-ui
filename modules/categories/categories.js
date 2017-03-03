@@ -1,32 +1,23 @@
 import React, {Component} from 'react'
 
-import IconArrow from '../icon/arrow.svg'
-import Analizes from '../analyzes/analyzes'
+import Category from '../category/category'
 
 class Categories extends Component {
-	state = {
-		open: false
-	}
-	_toggle() {
-		this.setState({
-			open: !this.state.open
-		})
-	}
 	render() {
 		const {
-			open
-		} = this.state
+			data,
+		} = this.props
+
 		return (
 			<div className="categorys">
-				<div className={`category ${open ? 'category--open' : ''}`} onClick={::this._toggle}>
-					<div className="category__name">
-						Общеклинические анализы
-						<IconArrow className="category__icon" />
-					</div>
-					<div className="category__content">
-						<Analizes />
-					</div>
-				</div>
+			{
+				data.map((category, index) => (
+					<Category
+						key={index}
+						data={category}
+					/>
+				))
+			}
 			</div>
 		)
 	}

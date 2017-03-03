@@ -1,6 +1,10 @@
 import React, {Component} from 'react'
 import loadGoogleMapsAPI from 'load-google-maps-api'
 
+import { api } from '../utils/utils'
+import Preloader from '../preloader/preloader'
+
+import mapStyles from './contacts.style'
 import overlay from './overlay'
 import { googleKey } from '../config/config'
 
@@ -8,155 +12,57 @@ const MapLatLng = {
 	lng: 37.6,
 	lat: 55.75
 }
-const mapStyles = [
-	{
-		'featureType': 'administrative',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'on'
-			},
-			{
-				'saturation': -100
-			},
-			{
-				'lightness': 20
-			}
-		]
-	},
-	{
-		'featureType': 'landscape.man_made',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'simplified'
-			},
-			{
-				'saturation': -60
-			},
-			{
-				'lightness': 10
-			}
-		]
-	},
-	{
-		'featureType': 'landscape.natural',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'simplified'
-			},
-			{
-				'saturation': -60
-			},
-			{
-				'lightness': 60
-			}
-		]
-	},
-	{
-		'featureType': 'poi',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'off'
-			},
-			{
-				'saturation': -100
-			},
-			{
-				'lightness': 60
-			}
-		]
-	},
-	{
-		'featureType': 'road',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'on'
-			},
-			{
-				'saturation': -100
-			},
-			{
-				'lightness': 40
-			}
-		]
-	},
-	{
-		'featureType': 'transit',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'off'
-			},
-			{
-				'saturation': -100
-			},
-			{
-				'lightness': 60
-			}
-		]
-	},
-	{
-		'featureType': 'water',
-		'elementType': 'all',
-		'stylers': [
-			{
-				'visibility': 'on'
-			},
-			{
-				'saturation': -10
-			},
-			{
-				'lightness': 30
-			}
-		]
-	}
-]
-const places = [
-	{
-		position: {
-			lng: 37.6,
-			lat: 55.75
-		},
-		metro: 'м. Октябрьская',
-		address: 'Калужская площадь д.1 стр.1',
-		time: '10:00 - 20:00 \nСб.Вс. 9:00 - 17:00',
-		id: 'id'
-	}
-]
 
 class Contacts extends Component {
-	_map() {
+	state = {
+		data: null
+	}
+	_load() {
 		loadGoogleMapsAPI({
 			key: googleKey,
 			language: 'ru'
 		}).then(googleMaps => {
-			const map =
-				new googleMaps.Map(this.refs.map, {
-					disableDefaultUI: true,
-					center: MapLatLng,
-					zoom: 12,
-					backgroundColor: '#f4f4f4',
-					styles: mapStyles
-				})
-			places.forEach(place => {
-				const Overlay = overlay(googleMaps)
-				new Overlay(map, place)
-			})
+			this._map(googleMaps)
 		})
 	}
-	componentDidMount() {
-		this._map()
+	_map = googleMaps => {
+		const {
+			data: places
+		} = this.state
+
+		const map =
+			new googleMaps.Map(this.refs.map, {
+				disableDefaultUI: true,
+				center: MapLatLng,
+				zoom: 11,
+				backgroundColor: '#f4f4f4',
+				styles: mapStyles
+			})
+		places.forEach((place, index) => {
+			const Overlay = overlay(googleMaps)
+			place.id = index
+			new Overlay(map, place)
+		})
 	}
-	render() {
+	_getContent = () => {
+		this._load()
 		return (
 			<div className="contacts">
 				<div className="contacts__map" ref="map"></div>
 			</div>
 		)
+	}
+	componentWillMount() {
+		api('contacts')
+			.then(data => {
+				this.setState({
+					data
+				})
+			})
+	}
+	render() {
+		const { data } = this.state
+		return data ? this._getContent() : <Preloader />
 	}
 }
 

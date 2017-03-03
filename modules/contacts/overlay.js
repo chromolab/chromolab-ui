@@ -5,7 +5,7 @@ export default function (googleMaps) {
 	return class Overlay extends googleMaps.OverlayView {
 		constructor(map, data) {
 			super()
-			this.coords = new googleMaps.LatLng(data.position.lat, data.position.lng)
+			this.coords = new googleMaps.LatLng(data.latitude, data.longitude)
 			this.map = map
 			this.div = null
 			this.tmpl =

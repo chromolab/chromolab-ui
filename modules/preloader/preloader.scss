@@ -1,0 +1,43 @@
+.preloader{
+
+	position: relative;
+
+	size: 2rem;
+	margin: 2rem auto;
+
+	border-radius: 50%;
+
+	animation-name: preloader;
+	animation-duration: calc($trsn * 5);
+	animation-iteration-count: infinite;
+
+	// elements
+	&::before,
+	&::after{
+		content: '';
+
+		border-radius: inherit;
+	}
+	&::before{
+
+		position: absolute 0;
+		z-index: $z-over;
+
+		background-color: white;
+	}
+	&::after{
+
+		position: absolute -.2rem;
+
+		background: linear-gradient($color__red 0%, $color__purple--dark 100%);
+	}
+}
+
+@keyframes preloader{
+	from{
+		transform: rotate(0turn);
+	}
+	to{
+		transform: rotate(2turn);
+	}
+}
