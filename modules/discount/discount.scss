@@ -4,12 +4,10 @@
 
 	// mods
 	&--open &__{
-		&title{
-			text-decoration: none;
-		}
-		&text{
-			display: none;
-		}
+		text-decoration: none;
+	}
+	&--closed &__text{
+		display: none;
 	}
 
 	// elements
@@ -25,7 +23,10 @@
 		&text{
 			display: block;
 			margin-top: 2rem;
+
 			font-size: 1.25rem;
+			white-space: pre-wrap;
+
 			color: #2e2e2e;
 		}
 	}

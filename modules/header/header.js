@@ -71,7 +71,7 @@ class Header extends Component {
 						catalog
 							? (
 								<div key={catalog} className="header__search">
-									<Search autoFocus={true} />
+									<Search />
 								</div>
 							)
 							: (

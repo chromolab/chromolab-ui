@@ -3,10 +3,7 @@ before_script:
 - git config --global user.name "eugeneAlanev"
 - git remote rm origin
 - git remote add origin https://eugeneAlanev:${GH_TOKEN}@github.com/chromolab/chromolab-ui.git
-script: npm run travis
-env:
-  global:
-  - secure: B2pj05eF5bXlC4DtRdlslTH5yLYk+dqb1f0fKLTgTJsVB6dKNsH8Gbz2UTFaxW/QuHeF428Igh9toIFlp1qmbGesrEY2jweKl30i76Sy9lpDja+9kFvZdcKyETGBobJkx78yfdHpkaonhm3I3wCWkfpUOOFpAQ8TOjYKDwjIEqicCdSaJNVt3aLlY/vuIx83RtdOtGk4sHQOrvhNm96ssJbwiUU/6Fe+2bUqimSdudDVYoOPVXW0yT26vnvU54QbeHL33fHj6aoeLXT27XW/NITWEJkHrby+AN8Co771mguU1EtWMsp8OZ/Z03tj3HjMDT8H9ElqCnOKyZJ5Z/z1ntAjO2HKj4cxMOMdoWghQjkp50hPK29bjdzLaa6ZWhWMkqoSvFvSSk+UX+yOeDQ6/7xnPqMHIDb7rMu/bLKYHqmliy60J5lUQ6edUDnJhL4B0cjCoT+25ROsfnOVjaNuDkyl3RAYMLns5Ivh6Wgjv8qWozkEnPzERnkii1pNVSjcDzZeRt0ivvsahEN5/BYta+4RZIkqSoem1plqf0bf4XZ1YTJ442IADivTKtPWWcCA0utkcNhA6IxWdCoIf2qpjGjgVQqJiiUYrv0JKVRj1QXTvy/s2h6XNODDJgiAf75v3UqPiPh2V1cpr3YIX5By4C7tKNXuObbJgolz2h+OH/o=
+script: npm run test
 language: node_js
 node_js:
 - '6'

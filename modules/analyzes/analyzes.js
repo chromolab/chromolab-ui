@@ -4,9 +4,22 @@ import Analysis from '../analysis/analysis'
 
 class Analyzes extends Component {
 	render() {
+		const {
+			data,
+		} = this.props
+
 		return (
 			<div className="analyzes">
-				<Analysis short />
+			{
+				data
+				.map((analisis, index) => (
+					<Analysis
+						key={index}
+						data={analisis}
+						short
+					/>
+				))
+			}
 			</div>
 		)
 	}

@@ -6,7 +6,6 @@
 	// elements
 	&__{
 		&metro{
-			margin-top: 1.5rem;
 			font-size: 1.875rem;
 			font-weight: 500;
 			color: $color--secondary;
@@ -15,16 +14,24 @@
 			margin-top: 0.5rem;
 			font-weight: 1.25rem;
 		}
-		&time{
+		&metro,
+		&time,
+		&text{
 			margin-top: 1.5rem;
-			font-weight: 1.25rem;
+		}
+		&time,
+		&text{
+			font-size: 1.25rem;
+			white-space: pre-wrap;
+		}
+		&time{
 			line-height: 1.5rem;
+
 			color: $color--dim;
 		}
 		&text{
-			margin-top: 1.5rem;
-			font-weight: 1.25rem;
 			line-height: 1.75rem;
+
 			color: $color__black;
 		}
 	}
