@@ -11,7 +11,7 @@ class Intro extends Component {
 		data: null
 	}
 	_focus = () => {
-		this.props.router.push('/catalog')
+		this.props.router.push('/catalog?focus=true')
 	}
 	_getContent = () => {
 		const {

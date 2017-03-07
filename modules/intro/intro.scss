@@ -22,6 +22,7 @@
 	// elements
 	&__{
 		&title{
+			margin: 0;
 			font-size: inherit;
 			font-weight: normal;
 		}
@@ -40,7 +41,7 @@
 			}
 		}
 		&footer{
-			margin: 2rem * 3rem;
+			// margin: 2rem * 3rem;
 		}
 		&button{
 			@extend %link;
@@ -67,7 +68,7 @@
 			}
 		}
 		&search{
-			margin-top: 3rem;
+			margin-top: 2rem;
 		}
 	}
 }

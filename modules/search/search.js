@@ -22,6 +22,14 @@ class Search extends Component {
 		search(this.state.value)
 	}
 	render() {
+		const {
+			props,
+			props: {
+				focus
+			}
+		} = this
+
+		console.log(focus)
 		return (
 			<from className="search">
 				<input
@@ -30,6 +38,8 @@ class Search extends Component {
 					placeholder="найдите анализ"
 					onChange={this._input}
 					value={this.state.value}
+					autoFocus={focus}
+					{...props}
 				/>
 				<button className="search__button">
 					<IconLoupe className="search__icon" />

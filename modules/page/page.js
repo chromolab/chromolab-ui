@@ -25,9 +25,11 @@ class Page extends Component {
 		const {
 			children,
 			location: {
-				pathname
+				pathname,
+				query
 			}
 		} = this.props
+
 		const paths = pathname.split('/')
 		const page = paths[1] || 'root'
 		const innerPage = paths[2] || null
@@ -38,6 +40,7 @@ class Page extends Component {
 			<div className="page">
 				<Header
 					catalog={page == 'catalog'}
+					focus={query && query.focus}
 				/>
 				<ReactCSSTransitionGroup
 					component="div"

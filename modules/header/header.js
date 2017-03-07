@@ -32,7 +32,8 @@ class Header extends Component {
 				menu
 			},
 			props: {
-				catalog
+				catalog,
+				focus,
 			}
 		} = this
 
@@ -71,7 +72,7 @@ class Header extends Component {
 						catalog
 							? (
 								<div key={catalog} className="header__search">
-									<Search />
+									<Search focus={focus} />
 								</div>
 							)
 							: (
