@@ -49,14 +49,9 @@
 			background-color: white;
 			border-radius: 2rem;
 			box-shadow: inset 1px 1px 2px 1px color(black a(.2));
-			color: inherit;
 			outline: none;
 			appearance: none;
 
-			// mods
-			&::placeholder{
-				opacity: 1;
-			}
 			&--{
 				&text{
 					min-height: 8rem;
