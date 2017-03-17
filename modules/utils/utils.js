@@ -10,7 +10,8 @@ export const api = (path, options) => {
 	})
 }
 
-export const from = (path, paramsObject) => {
+export const form = (path, paramsObject) => {
+	console.log(JSON.stringify(paramsObject))
 	return new Promise((resolve, reject) => {
 		fetch(`http://www.chromolab.ru/api/${path}`, {
 			method: 'POST',

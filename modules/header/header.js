@@ -41,10 +41,10 @@ class Header extends Component {
 			<header className={`header ${menu ? 'header--menu' : ''}`}>
 				<Minicart />
 				<div className="header__nav">
-					<Link to="/login" onClick={::this.toggleMenu} className="header__user">
+					<Link to="/login" onClick={::this.hide} className="header__user">
 						<IconUser className="header__user-image" />
 					</Link>
-					<Link to="/" onClick={::this.toggleMenu} className="header__icon">
+					<Link to="/" onClick={::this.hide} className="header__icon">
 						<IconChromolabIcon className="header__icon-logo" />
 					</Link>
 					<span className="header__menu">

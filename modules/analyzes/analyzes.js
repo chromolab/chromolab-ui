@@ -5,7 +5,7 @@ import Analysis from '../analysis/analysis'
 class Analyzes extends Component {
 	render() {
 		const {
-			data,
+			data = [],
 		} = this.props
 
 		return (
