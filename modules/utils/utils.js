@@ -1,12 +1,22 @@
 export const api = (path, options) => {
 	return new Promise((resolve, reject) => {
-		fetch(`http://www.chromolab.ru/api/${path}`, options)
-			.then(res => res.text())
-			.then(data => data.replace('<br>', '\\n'))
-			.then(data => data.replace(/<[^<]+?>/g, ''))
-			.then(data => JSON.parse(data))
-			.then(data => resolve(data))
-			.catch(err => reject(err))
+		const oldData = sessionStorage.getItem(path)
+		if (oldData) {
+			resolve(
+				JSON.parse(oldData)
+			)
+		} else {
+			fetch(`http://www.chromolab.ru/api/${path}`, options)
+				.then(res => res.text())
+				.then(data => data.replace('<br>', '\\n'))
+				.then(data => data.replace(/<[^<]+?>/g, ''))
+				.then(data => JSON.parse(data))
+				.then(data => {
+					sessionStorage.setItem(path, JSON.stringify(data))
+					resolve(data)
+				})
+				.catch(err => reject(err))
+		}
 	})
 }
 
