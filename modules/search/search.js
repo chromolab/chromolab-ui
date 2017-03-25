@@ -23,13 +23,12 @@ class Search extends Component {
 	}
 	render() {
 		const {
-			props,
 			props: {
-				focus
+				focus = false,
+				onFocus
 			}
 		} = this
 
-		console.log(focus)
 		return (
 			<from className="search">
 				<input
@@ -39,7 +38,7 @@ class Search extends Component {
 					onChange={this._input}
 					value={this.state.value}
 					autoFocus={focus}
-					{...props}
+					onFocus={onFocus}
 				/>
 				<button className="search__button">
 					<IconLoupe className="search__icon" />

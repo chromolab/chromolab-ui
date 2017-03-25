@@ -8,7 +8,7 @@ class Footer extends Component {
 	render() {
 		return (
 			<div className="footer">
-				<Link to="callback" className="footer__callback">
+				<Link to="/callback" className="footer__callback">
 					<IconPhone className="footer__callback-icon" />
 				</Link>
 				<span className="footer__phone">

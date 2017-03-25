@@ -25,9 +25,8 @@ class Category extends Component {
 		return (
 			<div
 				className={`category ${open ? 'category--open' : 'category--closed'}`}
-				onClick={this._toggle}
 			>
-				<div className="category__name">
+				<div className="category__name" onClick={this._toggle}>
 					{title}
 					<IconArrow className="category__icon" />
 				</div>

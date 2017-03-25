@@ -1,5 +1,7 @@
+import 'whatwg-fetch'
+
 import { render } from 'react-dom'
-import { Router, Route, IndexRoute, hashHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 
 import Reg from '../modules/reg/reg'
 import Page from '../modules/page/page'
@@ -22,9 +24,9 @@ const Root = ({ children }) => children
 
 render(
 	<Root>
-		<Router history={hashHistory}>
+		<Router history={browserHistory}>
 			<Route path="/" component={Page}>
-				<IndexRoute components={Intro} />
+				<IndexRoute component={Intro} />
 				<Route
 					path="about"
 					component={About}

@@ -59,6 +59,13 @@
 			&--login{
 				border-radius: 50%;
 			}
+
+			// subelements
+			&-{
+				&image{
+					size: 100%;
+				}
+			}
 		}
 		&icon{
 

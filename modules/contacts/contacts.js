@@ -34,7 +34,7 @@ class Contacts extends Component {
 			new googleMaps.Map(this.refs.map, {
 				disableDefaultUI: true,
 				center: MapLatLng,
-				zoom: 11,
+				zoom: 10,
 				backgroundColor: '#f4f4f4',
 				styles: mapStyles
 			})

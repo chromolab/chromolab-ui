@@ -1,3 +1,4 @@
+import { browserHistory } from 'react-router'
 
 
 export default function (googleMaps) {
@@ -24,7 +25,7 @@ export default function (googleMaps) {
 							<div class="contacts-info__metro">${data.metro}</div>
 							<div class="contacts-info__address">${data.address}</div>
 							<div class="contacts-info__time">${data.time}</div>
-							<a href="#/contacts/${data.id}" class="contacts-info__link">Как проехать</a>
+							<a href="/contacts/${data.id}" class="contacts-info__link">Как проехать</a>
 						</div>
 					</div>
 				</div>
@@ -39,6 +40,10 @@ export default function (googleMaps) {
 			})
 			div.innerHTML = this.tmpl
 			this.div = div
+			div.querySelector('a').addEventListener('click', e => {
+				e.preventDefault()
+				browserHistory.push(e.target.href)
+			})
 			const panes = this.getPanes()
 			panes.overlayLayer.appendChild(div)
 
